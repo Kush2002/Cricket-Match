@@ -1,0 +1,257 @@
+/* #3B0344 */
+
+.txt-color{
+        color:#198754;
+}
+
+.txt-size{
+        font-size: 50px;
+}
+
+/* ========================================== HEADER VIEW ========================================== */
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+
+/* ========================================== CARD VIEW ========================================== */
+
+body {
+  margin-top: 70px;
+  /* padding: 15px; */
+}
+
+.contain {
+  /* background-color: #3B0344; */
+  background-image: url('/img/bag.jpg');
+}
+
+/* ========================================== RECENT CARD VIEW ========================================== */
+
+.img-icon {
+  height: 33px;
+  width: 47px;
+  border-radius: 5px;
+  filter: drop-shadow(1px 2px 1px #000);
+}
+
+.cardView {
+  background-color: #3B0344; 
+  padding: 10px; 
+  border-radius: 5px; 
+  border:#C500E1 2px solid;
+}
+
+/* ========================================== DROP DOWN ========================================== */
+.dropdown{
+  margin: 30px;
+  appearance: none;
+  background-color: #C500E1;
+  color: #FFFFFF;
+  background-image: url('/img/arrow.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+
+/* ========================================== RECENT MATCH CARD VIEW ========================================== */
+
+.news {
+  background: #fff;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: all .5s ease-in-out;
+}
+/*----  Main Style  ----*/
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+  padding-top: 80px; 
+  padding-bottom: 100px;
+}
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+  width: 100%;
+  height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
+
+/* Recent ScoreCard Page */
+.line{
+  border-bottom:1px solid #C500E140
+  
+}
+.recentContainear{
+  border:1px solid #C500E1;
+  color: white;
+  border-radius:10px; 
+  margin-top: 100px;
+}
+.recentImage{
+  background-image:url('/img/bag.jpg');
+  background-position: center center;
+  border-top:2px solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #C500E1;
+}
+
+.status-0 {
+  color: #b2b2b2;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  padding: 4px 11px;
+}
+.status-1 {
+  color: #121212;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #121212;
+  padding: 5px 14px;
+}
+.status-2 {
+  color: #C500E1;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #C500E1;
+  padding: 5px 14px;
+}
+.status-4 {
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid green;
+  padding: 4px 12px;
+  background: green;
+}
+.status-6 {
+  color: #fff;
+  font-weight: bold;
+  background: #C500E1;
+  border: 1px solid #C500E1;
+  padding: 5px 14px;
+}
+.status-w {
+  color: #fff;
+  font-weight: bold;
+  background: red;
+  border: 1px solid red;
+  padding: 5px 14px;
+}
+
+.scoreBtn{
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 20px;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: #3B0344;
+  border: 3px solid #C500E1 ;
+  color: #fff;
+}
+
+.team-name {
+  padding: 5px 115px;
+  font-size: 20px;
+  background: #3B0344;
+  color: #fff;
+  width: 119%;
+  border-radius: 5px;
+}
+
+.team{
+  margin-left: 33%;
+  border: 3px solid #C500E1;
+}
+
+.fancy {
+  padding: 5px;
+  font-size: 20px;
+  background: #3B0344;
+  color: #fff;
+  border-radius: 1px;
+}
+.tbl-data {
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title%></title>
+        <link rel="shortcut icon" href="/img/favicon.ico"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <%- include('header'); -%>
+    <div class="container recentContainear" data-id="<%= match.data.match_id %>">
+        <div id="matchData1" style="margin-bottom: 20px;">
+            <hr>    
+        </div>
+        <div class="row">
+            <div class="card-text" >
+                <span class="d-flex justify-content-center" style="color:#3B0344; font-size: 20px;">
+                    <b><%= match.data.result %></b>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-9">
+                <div class="card-text">
+                    <div class="text-black">
+                        <span style="color: #3B0344;"><b>This Over: </b></span>
+                        <% if (match.data.last36ball && Object.keys(match.data.last36ball).length > 0) { %>
+                            <% match.data.last36ball.forEach(status => { %>
+                                <% let ballData =status %>
+                                <% if (['0', '1', '2', '4', '6','w'].includes(status)) { %>
+                                    <span style="border-radius: 20px;" class="status-<%= status %>"><%= ballData %></span>
+                                <% } else { %>
+                                    <span style="border-radius: 20px;" class="status-w"><%= ballData %></span>
+                                <% } %>
+                            <% }) %>
+                        <% } else { %>
+                            No Over available
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card-text">
+                    <h5 class="text-black">
+                        <span style="color: #3B0344;"><b>Current Run Rate: </b></span>
+                        <%= match.data.curr_rate %></h5>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-3" style="margin-bottom: 10px;">
+                    <div class="card-text">
+                        <h5 class="text-black">
+                            <span style="color: #3B0344;"><b>Fav Team: </b></span>
+                            <%= match.data.fav_team %></h5>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-bottom: 10px;">
+                    <div class="card-text">
+                        <h5 class="text-black"><span style="color: #3B0344;"><%= match.data.fav_team %></span></h5>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-bottom: 10px;">
+                    <div class="card-text">
+                        <h5 class="text-black">
+                            <span style="color: #3B0344;"><b>Session: </b></span>0</h5>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-bottom: 10px;">
+                    <div class="card-text">
+                        <h5 class="d-flex justify-content-end">
+                            <span style="color: #3B0344;"><b>Lambi:</b></span></h5>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-3">
+                        <button class="selectable scoreBtn" id="btnSummary">Summary</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="scoreBtn" id="btnSquad">Squad</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="scoreBtn" id="btnScoreCard">ScoreCard</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="scoreBtn" id="btnFancy">Fancy</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="scoreBtn" id="btnOdd">Odd</button>
+                    </div>
+                </div>
+                <hr>
+                <div id="matchData2" style="margin-bottom: 20px;">
+                    
+                </div>
+                </div>
+            </div>
+            <script src="/js/squadCard.js"></script>
+            <script src="/js/scoreCard.js"></script>
+            <script src="/js/fancy.js"></script>
+            <script src="/js/odd.js"></script>
+</body>
+</html>

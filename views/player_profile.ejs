@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+        <link rel="shortcut icon" href="/img/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <%- include('header'); -%>
+        <div class="w-100" style="margin-top: 80px;">
+            <div class="body">
+                <h2 class="title" style="color: #3b0344; margin-left: 200px;"><%= data.data.player.name %></h2>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <img src="<%= data.data.player.image %>" style="margin-left: 20px;" /><br />
+                    <span style="margin-left: 50px; font-size: large;" class="fw-bold">Team</span>
+                    <span style="margin-left: 50px; font-size: large;"><%= data.data.teams %></span>
+                    <hr />
+                </div>
+                <div class="col-6" style="margin-top: 100px;">
+                    <div class="" style="display: flex; width: 100%; align-items: start;">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name</th>
+                                    <td><%= data.data.player.name %></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date of Birth</th>
+                                    <td><%= data.data.player.born %></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Role</th>
+                                    <td><%= data.data.player.play_role %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Bating</th>
+                                    <td><%= data.data.player.style_bating %></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bowling</th>
+                                    <td><%= data.data.player.style_bowling %></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birth Place</th>
+                                    <td><%= data.data.player.birth_place %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="" class="tabcontent mb-5">
+            <span class="fw-bold fs-2 ms-5">Batting Summary</span>
+            <table class="table table-secondary tbl-data ms-5">
+                <tbody>
+                    <tr style="text-align: center;">
+                        <th>Formet</th>
+                        <th>M</th>
+                        <th>Inn</th>
+                        <th>Runs</th>
+                        <th>Ball</th>
+                        <th>HS</th>
+                        <th>Sr</th>
+                        <th>Avg</th>
+                        <th>4s</th>
+                        <th>6s</th>
+                        <th>50s</th>
+                        <th>100s</th>
+                        <th>200s</th>
+                    </tr>
+                    <% data.data.batting_career.forEach(function(stats) { %>
+                    <tr style="text-align: center;">
+                        <td><%= stats.match_type %></td>
+                        <td><%= stats.matches %></td>
+                        <td><%= stats.inning %></td>
+                        <td><%= stats.runs %></td>
+                        <td><%= stats.balls %></td>
+                        <td><%= stats.hundreds %></td>
+                        <td><%= stats.fifty %></td>
+                        <td><%= stats.high_score %></td>
+                        <td><%= stats.sr %></td>
+                        <td><%= stats.avg %></td>
+                        <td><%= stats.fours %></td>
+                        <td><%= stats.sixes %></td>
+                        <td><%= stats.not_out %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div id="" class="tabcontent mb-5">
+            <span class="fw-bold fs-2 ms-5">Bowling Summary</span>
+            <table class="table table-secondary tbl-data ms-5">
+                <tbody>
+                    <tr style="text-align: center;">
+                        <th>Formet</th>
+                        <th>M</th>
+                        <th>Inn</th>
+                        <th>Runs</th>
+                        <th>Ball</th>
+                        <th>Wk</th>
+                        <th>Eco</th>
+                        <th>Avg</th>
+                        <th>Sr</th>
+                        <th>Best fig</th>
+                        <th>4W</th>
+                        <th>5W</th>
+                    </tr>
+                    <% data.data.bowling_career.forEach(function(stats) { %>
+                    <tr style="text-align: center;">
+                        <td><%= stats.match_type %></td>
+                        <td><%= stats.matches %></td>
+                        <td><%= stats.inning %></td>
+                        <td><%= stats.runs %></td>
+                        <td><%= stats.balls %></td>
+                        <td><%= stats.wkts %></td>
+                        <td><%= stats.economy %></td>
+                        <td><%= stats.avg %></td>
+                        <td><%= stats.sr %></td>
+                        <td><%= stats.bbi %></td>
+                        <td><%= stats.four_wkt %></td>
+                        <td><%= stats.five_wkt %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

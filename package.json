@@ -1,0 +1,17 @@
+{
+  "name": "match",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "watch:js": "parcel watch ./public/js/style.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel build ./public/js/style.js --out-dir ./public/js --out-file bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "nodemon": "^3.1.0"
+  }
+}
