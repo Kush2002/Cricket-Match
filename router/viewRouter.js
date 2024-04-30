@@ -17,6 +17,18 @@ router.get('/recent',
     viewController.getRecentCardMatch,
     viewController.getRecentPage);
 
+router.get('/live',
+    viewController.getLiveMatch);
+
+router.get('/series',
+    viewController.getSeries);
+
+router.get('/news',
+    viewController.getNews);
+
+router.get('/ranking',
+    viewController.getRankig);
+
 router.get('/upcoming',
     upComingController.getUpComingMatches,
     viewController.getUpcomingMatch);

@@ -23,7 +23,7 @@
             <span class="fw-bold" style="color: #C500E1; margin-top: 30px; margin-left:50px;font-size:30px;"><%= currentMatchDate %></span>
             <% } %>
          <div class="item  col-6 col-md-4" id="item" style="margin-bottom: 10px;">
-            <div class="card text-white custom-card" onclick="redirectToMatch(<%= data.data[i].match_id %>)" style="background-color: #3B0344; padding: 10px; border-radius: 5px; border:#C500E1 1px solid;">
+            <div class="card text-white custom-card" onclick="redirectToMatch('<%= data.data[i].match_id %>')" style="background-color: #3B0344; padding: 10px; border-radius: 5px; border:#C500E1 1px solid;">
                <div>
                   <% if(data.data[i].series) {%>
                   <div class="row">
@@ -92,5 +92,6 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
          <script src="/js/upcoming.js"></script>
+         <%- include('footer'); -%>
    </body>
 </html>

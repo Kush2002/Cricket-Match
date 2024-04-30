@@ -18,7 +18,7 @@
          <div id="owl-carousel" class="owl-carousel owl-theme">
             <% for(let match=0; match< data.data.length; match++) { %>
             <div class="item" >
-               <div class="card text-white" style="background-color: #3B0344; padding: 10px; border-radius: 5px; border:#C500E1 1px solid;">
+               <div class="card text-white" onclick="redirectToMatch('<%= data.data[match].match_id %>')" style="background-color: #3B0344; padding: 10px; border-radius: 5px; border:#C500E1 1px solid;">
                   <div>
                      <% if(data.data[match].series) {%>
                      <% if(data.data[match].match_status) {%>
@@ -68,8 +68,8 @@
             <% } %>  
          </div>
       </div>
-      <h1>News</h1>
-      <!-- RECENT MATCH CARD VIEW -->
+      <!-- News CARD VIEW -->
+      <span class="fw-bold" style="color: #C500E1; margin: 50px; font-size: 30px;">NEWS FOR YOU</span>
       <div class="container py-5">
          <div class="row row-cols-1 row-cols-md-3 g-4">
             <% if (Array.isArray(news.data) && news.data.length > 0) { %>
@@ -98,11 +98,13 @@
             <% } %>
          </div>
       </div>
-      <!-- RECENT MATCH CARD VIEW -->  
+      <!-- News CARD VIEW -->  
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+         crossorigin="anonymous"></script>
+      <script src="/js/upcoming.js"></script>
       <script>
          $('#owl-carousel').owlCarousel({
          loop: true,
@@ -111,5 +113,6 @@
          // nav: true,
          items: 3,})
       </script>
+      <%- include('footer'); -%>
    </body>
 </html>

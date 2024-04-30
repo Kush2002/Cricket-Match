@@ -37,8 +37,8 @@ async function fetchSummary() {
                         </div>
                         <div class='col-4 text-black d-flex justify-content-start'>
                             <div class='p-2 bd-highlight'>
-                                <img src="${data.data.team_b_img}" style="height:50px; width:50px;" alt="Team A Image">
-                                <span style='color:#3B0344;'><b>${data.data.team_b}</b></span>
+                                <img src="${data.data.team_a_img}" style="height:50px; width:50px;" alt="Team A Image">
+                                <span style='color:#3B0344;'><b>${data.data.team_a}</b></span>
                             </div>
                         </div>
                         <div class='col-4 text-black d-flex justify-content-center'>
@@ -48,8 +48,8 @@ async function fetchSummary() {
                         </div>
                         <div class='col-4 text-black d-flex justify-content-end'>
                             <div class="p-2 bd-highlight">
-                            <span style='color:#3B0344;'><b>${data.data.team_a}</b></span>
-                                <img src="${data.data.team_a_img}" style="height:50px; width:50px;" alt="Team A Image">
+                            <span style='color:#3B0344;'><b>${data.data.team_b}</b></span>
+                                <img src="${data.data.team_b_img}" style="height:50px; width:50px;" alt="Team A Image">
                             </div>
                         </div>
                     </div>
