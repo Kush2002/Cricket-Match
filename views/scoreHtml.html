@@ -1,95 +1,63 @@
-        <% if (match.data.last36ball === '0') { %>
-            <span style="border-radius: 20px;" class="status-0"><%= match.data.last36ball%></span>
-        <% } else if (match.data.last36ball === '1') { %>
-            <span style="border-radius: 20px;" class="status-1"><%= match.data.last36ball%></span>
-        <% } else if (match.data.last36ball === '2') { %>
-            <span style="border-radius: 20px;" class="status-2"><%= match.data.last36ball%></span>
-        <% } else if (match.data.last36ball === '4') { %>
-            <span style="border-radius: 20px;" class="status-4"><%= match.data.last36ball%></span>
-        <% } else if (match.data.last36ball === '6') { %>
-            <span style="border-radius: 20px;" class="status-6"><%= match.data.last36ball%></span>
-        <% } else if (match.data.last36ball === 'w') { %>
-            <span style="border-radius: 20px;" class="status-w"></span>
-        <% } %>
-
-        <% match.data.last36ball.forEach(ball => { %>
-            <% if (ball.status === 0) { %>
-                <span style="border-radius: 20px;" class="status-0"><%= ball.data %></span>
-            <% } else if (ball.status === 1) { %>
-                <span style="border-radius: 20px;" class="status-1"><%= ball.data %></span>
-            <% } else if (ball.status === 4) { %>
-                <span style="border-radius: 20px;" class="status-4"><%= ball.data %></span>
-            <% } else if (ball.status === 6) { %>
-                <span style="border-radius: 20px;" class="status-6"><%= ball.data %></span>
-            <% } else if (ball.status === 'w') { %>
-                <span style="border-radius: 20px;" class="status-w"><%= ball.data %></span>
-            <% } %>
-        <% }) %>
-
-        <% if (match.data.last36ball && Array.isArray(match.data.last36ball) && match.data.last36ball.length > 0) { %>
-            <% match.data.last36ball.forEach(ball => { %>
-                <% let statusClass = ''; %>
-                <% switch (ball.status) { %>
-                    <% case 0: %>
-                        <% statusClass = 'status-0'; %>
-                        <% break; %>
-                    <% case 1: %>
-                        <% statusClass = 'status-1'; %>
-                        <% break; %>
-                    <% case 4: %>
-                        <% statusClass = 'status-4'; %>
-                        <% break; %>
-                    <% case 6: %>
-                        <% statusClass = 'status-6'; %>
-                        <% break; %>
-                    <% case 'w': %>
-                        <% statusClass = 'status-w'; %>
-                        <% break; %>
-                    <% default: %>
-                        <% statusClass = 'unknown-status'; %>
-                <% } %>
-                <span style="border-radius: 20px;" class="<%= statusClass %>"><%= ball.data %></span>
-            <% }) %>
-        <% } else { %>
-            No Over available
-        <% } %>
+async function fetchTeam(matchTypes) {
+    try {
+        let resHtml = '';
         
-        <% if (match.data.last36ball && Array.isArray(match.data.last36ball)) { %>
-            <% match.data.last36ball.forEach(ball => { %>
-                <% if (ball.status === 0) { %>
-                    <span style="border-radius: 20px;" class="status-0"><%= ball.data %></span>
-                <% } else if (ball.status === 1) { %>
-                    <span style="border-radius: 20px;" class="status-1"><%= ball.data %></span>
-                <% } else if (ball.status === 4) { %>
-                    <span style="border-radius: 20px;" class="status-4"><%= ball.data %></span>
-                <% } else if (ball.status === 6) { %>
-                    <span style="border-radius: 20px;" class="status-6"><%= ball.data %></span>
-                <% } else if (ball.status === 'w') { %>
-                    <span style="border-radius: 20px;" class="status-w"><%= ball.data %></span>
-                <% } %>
-            <% }) %>
-        <% } else { %>
-            No Over available
-        <% } %>
+        for (const matchType of matchTypes) {
+            let formData = new FormData();
+            formData.append('type', matchType);
+            let apiUrl = `http://apicricketchampion.in/apiv4/teamRanking/b39d003a77b86b49021b8ba8861bab7c`;
+            let response = await fetch(apiUrl, {
+                method: 'POST',
+                body: formData
+            });
 
+            if (!response.ok) {
+                throw new Error(`Network response for match type ${matchType} was not ok`);
+            }
 
-        <% Object.keys(match.data.last36ball).forEach(status => { %>
-            <% let ballData = match.data.last36ball[status]; %>
-            <% if (status === '0') { %>
-                <span style="border-radius: 20px;" class="status-0"><%= ballData %></span>
-            <% } else if (status === '1') { %>
-                <span style="border-radius: 20px;" class="status-1"><%= ballData %></span>
-            <% } else if (status === '2') { %>
-                <span style="border-radius: 20px;" class="status-2"><%= ballData %></span>
-            <% } else if (status === '4') { %>
-                <span style="border-radius: 20px;" class="status-4"><%= ballData %></span>
-            <% } else if (status === '6') { %>
-                <span style="border-radius: 20px;" class="status-6"><%= ballData %></span>
-            <% } else if (status === 'w') { %>
-                <span style="border-radius: 20px;" class="status-w"></span>
-            <% } %>
+            let data = await response.json();
+            console.log(`API Response for match type ${matchType}:`, data);
 
-        <% })else { %>
-            No Over available
-        <% } %>
+            resHtml += `
+                <div id="com" class="tabcontent" style="display: block;">
+                    <div class="" style="padding:10px">
+                        <div class="rank-grid" style="height:508px;overflow:auto">
+                            <div class="grid-rank" style="">
+                                <h2 class="bg-row-tr" style="padding:10px;margin-bottom:0px">ODI Ranking for match type ${matchType}</h2>
+                                <table style="width:100%;background:#fff">
+                                    <tbody>
+                                        <tr style="background:#f5f5f5;color:#4539ff">
+                                            <th>Rank</th>
+                                            <th style="text-align:left">Team</th>
+                                            <th>Rating</th>
+                                            <th>Points</th>
+                                        </tr>
+            `;
 
+            for (let i = 0; i < Math.min(10, data.data.length); i++) {
+                resHtml += `
+                    <tr style="text-align:center;font-size:14px">
+                        <td style="color:#000;">${data.data[i].rank}</td>
+                        <td style="text-align:left">${data.data[i].team}</td>
+                        <td>${data.data[i].rating}</td>
+                        <td>${data.data[i].point}</td>
+                    </tr>
+                `;
+            }
+
+            resHtml += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        $('#btnData').html(resHtml);
+    } catch (error) {
+        console.error('Error fetching API data:', error);
+        $('#btnData').html('<p>Error fetching API data</p>');
+    }
+}

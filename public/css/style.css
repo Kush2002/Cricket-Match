@@ -246,12 +246,9 @@ hr {
   color: #fff;
   border-radius: 1px;
 }
-.tbl-data {
-  background-color: #e4e4e4;
-  border-radius: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+.table-radius{
+    border:1px solid #C500E1;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px ;
 }
