@@ -21,6 +21,7 @@ router.get('/live',
     viewController.getLiveMatch);
 
 router.get('/series',
+    matchController.getSeriesList,
     viewController.getSeries);
 
 router.get('/news',

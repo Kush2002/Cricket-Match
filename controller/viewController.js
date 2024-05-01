@@ -98,12 +98,12 @@ exports.getNewsDetails = async(req, res, next) => {
 
 exports.getSeries = async(req, res, next) => {
     // console.log('req.body');
-    // const data = req.body;
-    // console.log(data);
+    const {series} = req.body;
+    // console.log(series);
     res.status(200).render('series', {   
         title: 'Cricket Series-Schedule |National, InterNational & Domestic Series',
         text:'SERIES LIST',
-        // data
+        series
     });
 };
 

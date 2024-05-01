@@ -19,19 +19,11 @@
                      <% for (let i = 0; i < news.data.length; i++) { %>
                          <div class="col">
                              <div class="card-news news" style="border:#C500E1 2px solid;" onclick="redirectToNews('<%= news.data[i].news_id %><%= news.data[i].title %>')">
-                                 <% if(news.data[i].image) { %> 
                                      <img src="<%= news.data[i].image %>" class="card-img-top" style="height: 250px;" alt="News Image">
-                                 <% } %>
                                  <div class="card-body">
-                                    <% if (news.data[i].pub_date) { %>
                                          <button class="rounded text-white text-center" style="background-color: #3B0344; margin-bottom: 8px;"><%= news.data[i].pub_date %></button>
-                                     <% } %>
-                                     <% if (news.data[i].title) { %>
                                          <h5 class="card-title" style="color: #3B0344; font-size: 20px;"><%= news.data[i].title %></h5>
-                                     <% } %>
-                                     <% if (news.data[i].description) { %>
                                          <h5 class="card-title" style="font-size: 15px;"><%= news.data[i].description %></h5>
-                                     <% } %>
                                  </div>
                              </div>
                          </div>

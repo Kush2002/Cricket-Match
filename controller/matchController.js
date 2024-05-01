@@ -5,6 +5,7 @@ const FormData = require('form-data');
 // Match Data
 exports.getData = async(req, res, next) =>{
         fetch('http://apicricketchampion.in/apiv4/homeList/b39d003a77b86b49021b8ba8861bab7c', {
+            method: 'GET',
             headers: {
                 'Content-type': 'application/json',
             }
@@ -19,6 +20,7 @@ exports.getData = async(req, res, next) =>{
 
 exports.getMatchesNews = async(req, res, next) =>{
     fetch('http://apicricketchampion.in/apiv4/news/b39d003a77b86b49021b8ba8861bab7c', {
+        method: 'GET',
         headers: {
             'Content-type': 'application/json',
         }
@@ -27,6 +29,21 @@ exports.getMatchesNews = async(req, res, next) =>{
     .then(news => {
         // console.log('Match News',news);
         req.body.news = news
+            next();
+    });
+};
+
+exports.getSeriesList = async(req, res, next) =>{
+    fetch('http://apicricketchampion.in/apiv4/seriesList/b39d003a77b86b49021b8ba8861bab7c', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+        }
+    })
+    .then(resp => resp.json())
+    .then(series => {
+        // console.log('Series List',series);
+        req.body.series = series
             next();
     });
 };
@@ -41,7 +58,7 @@ exports.getNewsDetails = async (req, res, next) => {
         let data = new FormData();
         data.append('news_id', news_id);
         let config = {
-            method: 'post',
+            method: 'POST',
             url: 'http://apicricketchampion.in/apiv4/newsDetail/b39d003a77b86b49021b8ba8861bab7c',
             headers: {
                 ...data.getHeaders()
