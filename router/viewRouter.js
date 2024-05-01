@@ -28,6 +28,7 @@ router.get('/news',
     viewController.getNews);
 
 router.get('/newsDetails',
+    matchController.getNewsDetails,
     viewController.getNewsDetails);
 
 router.get('/ranking',

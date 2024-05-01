@@ -64,6 +64,15 @@ body {
   border-radius: 10px;
   transition: all .5s ease-in-out;
 }
+
+.newsData {
+  background: #fff;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: all .5s ease-in-out;
+}
+
 /*----  Main Style  ----*/
 #cards_landscape_wrap-2{
   text-align: center;

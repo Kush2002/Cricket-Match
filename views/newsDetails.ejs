@@ -15,17 +15,17 @@
       <span class="fw-bold" style="color: #C500E1; margin: 50px; font-size: 30px;"><%= text %></span>
             <!-- News CARD VIEW -->
             <div class="container py-5">
-               <div class="row row-cols-1 row-cols-md-3 g-4">
-                         <div class="col">
-                             <div class="card-news news" style="border:#C500E1 2px solid;" id="news_id">
-                                     <img src="imag" class="card-img-top" style="height: 250px;" alt="News Image">
-                                 <div class="card-body">
-                                         <button class="rounded text-white text-center" style="background-color: #3B0344; margin-bottom: 8px;">pub_date</button>
-                                         <h5 class="card-title" style="color: #3B0344; font-size: 20px;">title</h5>
-                                         <h5 class="card-title" style="font-size: 15px;">description</h5>
-                                 </div>
-                             </div>
-                         </div>              
+               <div class="row row-cols-1 row-cols-sm-8 g-4">
+                  <div class="col">
+                     <div class="card-news newsData" id="<%= newsData.data.news_id %>" style="border:#C500E1 2px solid;">
+                           <img src="<%= newsData.data.image %>" class="card-img-top" style="width:100%;border-radius:5px"  alt="News Image">
+                              <div class="card-body">
+                                 <span class="card-title" style="color: #3B0344; font-size: 30px; margin-top: 25px;"><%= newsData.data.title %></span><br><br>
+                                 <span class="card-body" style="font-size: 25px;"><%= newsData.data.description %></span><br><br>
+                                 <span class="card-body" style="font-size: 25px; margin-top:50px;"><%= newsData.data.content %></span><br><br>
+                              </div>
+                     </div>
+                  </div>  
                </div>
             </div>
             <!-- News CARD VIEW -->  

@@ -87,12 +87,12 @@ exports.getNews = async(req, res, next) => {
 
 exports.getNewsDetails = async(req, res, next) => {
     // console.log('req.body');
-    // const {news} = req.body;
-    // console.log(news);
+    const newsData = req.body;
+    // console.log(newsData);
     res.status(200).render('newsDetails', {   
         title: 'Latest Cricket News',
         text:'Full News Details',
-        // news
+        newsData
     }); 
 };
 

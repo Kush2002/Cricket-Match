@@ -1,4 +1,6 @@
 const fetch = require('node-fetch');
+const axios = require('axios');
+const FormData = require('form-data');
 
 // Match Data
 exports.getData = async(req, res, next) =>{
@@ -29,3 +31,30 @@ exports.getMatchesNews = async(req, res, next) =>{
     });
 };
 
+exports.getNewsDetails = async (req, res, next) => {
+    const news_id = req.query.news;
+    // console.log(news_id);
+    if (!news_id) {
+        return res.status(400).json({ error: 'News ID is required' });
+    }
+    try {
+        let data = new FormData();
+        data.append('news_id', news_id);
+        let config = {
+            method: 'post',
+            url: 'http://apicricketchampion.in/apiv4/newsDetail/b39d003a77b86b49021b8ba8861bab7c',
+            headers: {
+                ...data.getHeaders()
+            },
+            data: data
+        };
+        const response = await axios(config);
+        const json = response.data;
+        // console.log('News Details:', json);
+        req.body = json;
+        next();
+    } catch (err) {
+        console.error('Error fetching News Details', err);
+        res.status(500).json({ error: 'Failed to fetch News Details' });
+    }
+};
