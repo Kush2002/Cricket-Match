@@ -52,16 +52,24 @@
                         <%= live.data[i].team_b_short %>
                         <img src="<%= live.data[i].team_b_img %>" class="img-icon" alt="Team B Image">
                      </div>
-                     <% for (let j = 0; j < live.data[i].team_a_scores_over.length; j++) { %>
-                        <% let score = live.data[i].team_a_scores_over[j]; %>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="card-title col-6" style="font-size: 15px;">
-                              <span><%= score.score %></span><span style="margin-left: 8px;"><%= score.over %></span>
-                            </div>
-                            <div class="card-title col-6" style="font-size: 15px; text-align: end;">
-                            </div>
+                     <div class="row" style="margin-top: 10px;">
+                        <div class="col-6">
+                            <% for (let j = 0; j < live.data[i].team_a_scores_over.length; j++) { %>
+                                <% let score_a = live.data[i].team_a_scores_over[j]; %>
+                                <div class="card-title" style="font-size: 15px;">
+                                    <span><%= score_a.score %></span><span style="margin-left: 8px;"><%= score_a.over %></span>
+                                </div>
+                            <% } %>
                         </div>
-                    <% } %>
+                        <div class="col-6" style="text-align: end;">
+                            <% for (let k = 0; k < live.data[i].team_b_scores_over.length; k++) { %>
+                                <% let score_b = live.data[i].team_b_scores_over[k]; %>
+                                <div class="card-title" style="font-size: 15px;">
+                                    <span><%= score_b.score %></span><span style="margin-left: 8px;"><%= score_b.over %></span>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
                   </div>
                </div>
             </div>
