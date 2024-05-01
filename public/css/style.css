@@ -1,7 +1,10 @@
 /* #3B0344 */
 
-.txt-color{
+.statusUpcoming{
         color:#198754;
+}
+.statusLive{
+    color: yellow;
 }
 
 .txt-size{

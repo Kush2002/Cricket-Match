@@ -26,9 +26,15 @@
                         <div class="card-title col-9" style="font-size: 13px;">
                            <%= data.data[match].series%>
                         </div>
-                        <div class="card-title text-end col-3 txt-color" style="font-size: 13px;">
-                           <%= data.data[match].match_status%>
-                        </div>
+                        <% if (data.data[match].match_status === 'Live') { %>
+                           <div class="card-title text-end col-3 statusLive fw-bold" style="font-size: 13px;">
+                               <%= data.data[match].match_status %>
+                           </div>
+                       <% } else { %>
+                           <div class="card-title text-end col-3 statusUpcoming fw-bold" style="font-size: 13px;">
+                               <%= data.data[match].match_status %>
+                           </div>
+                       <% } %>
                      </div>
                      <% } %>
                      <% } %>

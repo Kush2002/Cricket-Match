@@ -15,7 +15,8 @@
       <span class="fw-bold" style="color: #C500E1; margin: 50px; font-size: 30px;"><%= text %></span><br>
       <!-- UPCOMING MATCH CARD VIEW -->
       <div class="row">
-         <% for (let i = 0; i < live.data.length; i++) { %>
+         <% if (live.data.length > 0) { %>
+            <% for (let i = 0; i < live.data.length; i++) { %>
          <div class="item  col-6 col-md-4" id="<%= live.data[i].match_id %>" style="margin-left: 50px; margin-top: 20px; margin-bottom: 100px;" >
             <div class="card text-white custom-card" onclick="redirectToMatch('<%= live.data[i].match_id %>')" style="background-color: #3B0344; padding: 10px; border-radius: 5px; border:#C500E1 1px solid;">
                <div>
@@ -75,6 +76,9 @@
             </div>
          </div> 
          <% } %>
+         <% } else { %>
+            <span style="display: flex; text-align: center; color: #C500E1;">No live Matches Available</span>
+        <% } %>
       </div>    
       <!-- UPCOMING MATCH CARD VIEW -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
