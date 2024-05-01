@@ -14,7 +14,7 @@
    <body>
       <%- include('header'); -%>
       <div class="contain">
-         <h1 class="text-white" style="margin-bottom: 10px;"><%= text%></h1>
+         <h1 class="text-white" ><%= text%></h1>
          <div id="owl-carousel" class="owl-carousel owl-theme">
             <% for(let match=0; match< data.data.length; match++) { %>
             <div class="item" >
@@ -30,14 +30,19 @@
                            <div class="card-title text-end col-3 statusLive fw-bold" style="font-size: 13px;">
                                <%= data.data[match].match_status %>
                            </div>
-                       <% } else { %>
+                        <% } else { %>
                            <div class="card-title text-end col-3 statusUpcoming fw-bold" style="font-size: 13px;">
                                <%= data.data[match].match_status %>
                            </div>
-                       <% } %>
+                        <% } %>
                      </div>
                      <% } %>
                      <% } %>
+                     <div class="row" style="margin-bottom: 5px;">
+                        <div class="col-12">
+                           <span style="font-size: 10px;"><%= data.data[match].venue %></span>
+                        </div>
+                     </div>
                      <div class="row">
                         <div class="card-title col-4">
                            <% if(data.data[match].team_a_img) {%>
@@ -58,6 +63,24 @@
                            <%= data.data[match].team_b_short %>
                            <% } %>
                         </div>
+                        <div class="row" style="margin-top: 5px;">
+                           <div class="col-6">
+                               <% for (let j = 0; j < data.data[match].team_a_scores_over.length; j++) { %>
+                                   <% let score_a = data.data[match].team_a_scores_over[j]; %>
+                                   <div class="card-title" style="font-size: 15px;">
+                                       <span><%= score_a.score %></span><span style="margin-left: 8px;"><%= score_a.over %></span>
+                                   </div>
+                               <% } %>
+                           </div>
+                           <div class="col-6" style="text-align: end;">
+                               <% for (let k = 0; k < data.data[match].team_b_scores_over.length; k++) { %>
+                                   <% let score_b = data.data[match].team_b_scores_over[k]; %>
+                                   <div class="card-title" style="font-size: 15px;">
+                                       <span><%= score_b.score %></span><span style="margin-left: 8px;"><%= score_b.over %></span>
+                                   </div>
+                               <% } %>
+                           </div>
+                       </div>
                         <div class="col-md-4-4 text-center">
                            <% if(data.data[match].match_date) { %>
                            <% if(data.data[match].match_time) { %>
