@@ -32,6 +32,21 @@ exports.getMatchesNews = async(req, res, next) =>{
             next();
     });
 };
+exports.getLiveMatchsList = async(req, res, next) =>{
+    fetch('http://apicricketchampion.in/apiv4/liveMatchList/b39d003a77b86b49021b8ba8861bab7c', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+        }
+    })
+    .then(resp => resp.json())
+    .then(live => {
+        console.log('Live Matches List',live);
+        req.body.live = live
+            next();
+    });
+};
+
 
 exports.getSeriesList = async(req, res, next) =>{
     fetch('http://apicricketchampion.in/apiv4/seriesList/b39d003a77b86b49021b8ba8861bab7c', {

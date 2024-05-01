@@ -18,6 +18,7 @@ router.get('/recent',
     viewController.getRecentPage);
 
 router.get('/live',
+matchController.getLiveMatchsList,
     viewController.getLiveMatch);
 
 router.get('/series',

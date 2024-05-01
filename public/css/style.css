@@ -201,6 +201,13 @@ hr {
   border: 1px solid #C500E1;
   padding: 5px 14px;
 }
+.status-3 {
+  color: #C500E1;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #C500E1;
+  padding: 5px 14px;
+}
 .status-4 {
   color: #fff;
   font-weight: bold;

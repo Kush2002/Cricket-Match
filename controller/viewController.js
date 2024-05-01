@@ -13,12 +13,12 @@ exports.getHomePage = async(req, res, next) => {
 
 exports.getLiveMatch = async(req, res, next) => {
     // console.log('req.body');
-    // const data = req.body;
-    // console.log(data);
+    const {live} = req.body;
+    // console.log(live);
     res.status(200).render('live', {   
         title: 'Live Matches',
-        text:'Live Matches',
-        // data
+        text:'LIVE MATCHES',
+        live
     });
 };
 
@@ -28,7 +28,7 @@ exports.getUpcomingMatch = async(req, res, next) => {
     // console.log(data);
     res.status(200).render('upcoming', {   
         title: 'UpComing Matches',
-        text:'Upcoming Matches',
+        text:'UPCOMING MATCHES',
         data
     });
 };
@@ -80,7 +80,7 @@ exports.getNews = async(req, res, next) => {
     // console.log(news);
     res.status(200).render('news', {   
         title: 'Latest Cricket News',
-        text:'News',
+        text:'NEWS',
         news
     });
 };
@@ -113,7 +113,7 @@ exports.getRankig = async(req, res, next) => {
     // console.log(data);
     res.status(200).render('ranking', {   
         title: "ICC Ranking | Team Ranking | Man's & Women's Ranking",
-        text:'Ranking Matches',
+        text:'RANKING',
         // data
     });
 };
