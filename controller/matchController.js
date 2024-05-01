@@ -41,7 +41,7 @@ exports.getLiveMatchsList = async(req, res, next) =>{
     })
     .then(resp => resp.json())
     .then(live => {
-        console.log('Live Matches List',live);
+        // console.log('Live Matches List',live);
         req.body.live = live
             next();
     });
