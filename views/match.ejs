@@ -75,7 +75,7 @@
             <% if (Array.isArray(news.data) && news.data.length > 0) { %>
             <% news.data.forEach(newsItem => { %>
             <div class="col">
-               <div class="card-news news"  style="border:#C500E1 2px solid;">
+               <div class="card-news news"  style="border:#C500E1 2px solid;" onclick="">
                   <% if (newsItem.image) { %> 
                   <img src="<%= newsItem.image %>" class="card-img-top" style="height: 250px; " alt="News Image">
                   <% } %>

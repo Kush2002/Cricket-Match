@@ -76,13 +76,24 @@ exports.getPlayerDetails = async(req, res, next) => {
 
 exports.getNews = async(req, res, next) => {
     // console.log('req.body');
-    // const data = req.body;
-    // console.log(data);
+    const {news} = req.body;
+    // console.log(news);
     res.status(200).render('news', {   
-        title: 'News For Matches',
-        text:'News For Matches',
-        // data
+        title: 'Latest Cricket News',
+        text:'News',
+        news
     });
+};
+
+exports.getNewsDetails = async(req, res, next) => {
+    // console.log('req.body');
+    // const {news} = req.body;
+    // console.log(news);
+    res.status(200).render('newsDetails', {   
+        title: 'Latest Cricket News',
+        text:'Full News Details',
+        // news
+    }); 
 };
 
 exports.getSeries = async(req, res, next) => {
@@ -90,8 +101,8 @@ exports.getSeries = async(req, res, next) => {
     // const data = req.body;
     // console.log(data);
     res.status(200).render('series', {   
-        title: 'Series Matches',
-        text:'Series Matches',
+        title: 'Cricket Series-Schedule |National, InterNational & Domestic Series',
+        text:'SERIES LIST',
         // data
     });
 };
@@ -101,7 +112,7 @@ exports.getRankig = async(req, res, next) => {
     // const data = req.body;
     // console.log(data);
     res.status(200).render('ranking', {   
-        title: 'Ranking Matches',
+        title: "ICC Ranking | Team Ranking | Man's & Women's Ranking",
         text:'Ranking Matches',
         // data
     });

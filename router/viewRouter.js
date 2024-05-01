@@ -24,7 +24,11 @@ router.get('/series',
     viewController.getSeries);
 
 router.get('/news',
+    matchController.getMatchesNews,
     viewController.getNews);
+
+router.get('/newsDetails',
+    viewController.getNewsDetails);
 
 router.get('/ranking',
     viewController.getRankig);

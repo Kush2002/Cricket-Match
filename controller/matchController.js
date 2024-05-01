@@ -15,7 +15,6 @@ exports.getData = async(req, res, next) =>{
         });
 };
 
-    // Make an API request based on Match News
 exports.getMatchesNews = async(req, res, next) =>{
     fetch('http://apicricketchampion.in/apiv4/news/b39d003a77b86b49021b8ba8861bab7c', {
         headers: {
@@ -29,3 +28,4 @@ exports.getMatchesNews = async(req, res, next) =>{
             next();
     });
 };
+
