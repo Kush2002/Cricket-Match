@@ -44,23 +44,23 @@
                         </div>
                      </div>
                      <div class="row">
-                        <div class="card-title col-4">
+                        <div class="card-title col-5">
                            <% if(data.data[match].team_a_img) {%>
                            <img src="<%=data.data[match].team_a_img%>" style='height: 40px; width: 75px; object-fit: cover;' alt="No Image">
                            <% } %>
                            <% if(data.data[match].team_a_short) {%>
-                           <%= data.data[match].team_a_short %>
+                              <span style="font-size: 15px;"><%= data.data[match].team_a_short %></span>
                            <% } %>        
                         </div>
-                        <div class="card-title col-4">
+                        <div class="card-title col-2">
                            <img src="/img/VS.png" style='height: 45px; width: 45px;' alt="No Image">
                         </div>
-                        <div class="card-title col-4">
+                        <div class="card-title col-5">
                            <% if(data.data[match].team_b_img) {%>
                            <img src="<%=data.data[match].team_b_img%>" style='height: 40px; width: 75px; object-fit: cover;' alt="No Image">
                            <% } %>
                            <% if(data.data[match].team_b_short) {%>
-                           <%= data.data[match].team_b_short %>
+                           <span style="font-size: 15px;"><%= data.data[match].team_b_short %></span>
                            <% } %>
                         </div>
                         <div class="row" style="margin-top: 5px;">
