@@ -1,5 +1,7 @@
 /* #3B0344 */
-
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
 .statusUpcoming{
         color:#198754;
 }
@@ -16,7 +18,30 @@
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
+.liveBtn{
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 20px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #C500E1;
+  border: 3px solid #C500E1;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+}
 
+.navBtn{
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 20px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px solid #C500E1 ;
+  color: #3B0344;
+  font-family: 'Times New Roman', Times, serif;
+}
 /* ========================================== CARD VIEW ========================================== */
 
 body {

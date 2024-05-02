@@ -4,7 +4,7 @@ exports.getHomePage = async(req, res, next) => {
         // console.log('data',data);
         // console.log('news',news);
         res.status(200).render('match', {   
-            title: 'Home',
+            title: 'Live Cricke Match | INDIA, CSK, GT...',
             text:'MATCHES FOR YOU',
             data,
             news
