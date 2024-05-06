@@ -32,6 +32,7 @@ exports.getMatchesNews = async(req, res, next) =>{
             next();
     });
 };
+
 exports.getLiveMatchsList = async(req, res, next) =>{
     fetch('http://apicricketchampion.in/apiv4/liveMatchList/b39d003a77b86b49021b8ba8861bab7c', {
         method: 'GET',
